@@ -11,7 +11,7 @@ const settingsDetector = {
     const settingsStore = useSettingsStore.getState();
     const savedLanguage = settingsStore.getSetting('general.language');
 
-    if (savedLanguage && ['en', 'he'].includes(savedLanguage)) {
+    if (savedLanguage && ['en', 'he', 'fr'].includes(savedLanguage)) {
       return savedLanguage;
     }
 
@@ -30,7 +30,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    supportedLngs: ['en', 'he'],
+    supportedLngs: ['en', 'he', 'fr'],
     ns: ['common', 'welcome', 'settings', 'characters', 'world'],
     defaultNS: 'common',
 
@@ -56,7 +56,7 @@ i18n
 let currentLanguage = i18n.language;
 const unsubscribe = useSettingsStore.subscribe((state) => {
   const newLanguage = state.getSetting('general.language');
-  if (newLanguage && newLanguage !== currentLanguage && ['en', 'he'].includes(newLanguage)) {
+  if (newLanguage && newLanguage !== currentLanguage && ['en', 'he', 'fr'].includes(newLanguage)) {
     currentLanguage = newLanguage;
     i18n.changeLanguage(newLanguage);
   } else if (newLanguage === null || newLanguage === undefined) {

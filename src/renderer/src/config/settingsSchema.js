@@ -30,7 +30,8 @@ export const SETTINGS_SCHEMA = [
         options: [
           { value: "auto", label: "options.autoSystem" },
           { value: "en", label: "options.english" },
-          { value: "he", label: "options.hebrew" }
+          { value: "he", label: "options.hebrew" },
+          { value: "fr", label: "options.french" }
         ]
       },
       {
